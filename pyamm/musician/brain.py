@@ -2,12 +2,13 @@
 import random
 from pyamm.musician.theory import *
 
-def ideate(num_chords, scale='maj', stout=False):
+def ideate(num_chords, scale='maj', limit=None, stout=False):
     """
     Returns a list of potential chord/Note combinations
     Keywargs:
         num_chords -- How many chords to string together
         scale -- 'maj' or 'min' Defaul maj
+        limit -- amount of ideas to return
         stout -- print to stout?
     """
     if scale == 'maj':
@@ -22,6 +23,9 @@ def ideate(num_chords, scale='maj', stout=False):
 
     for cand in _candidater(num_chords, combos, iterations, degree):
         combos.append(cand)
+
+    if limit:
+        combos = random.sample(combos, limit)
 
     if stout:
         _print_results(combos)

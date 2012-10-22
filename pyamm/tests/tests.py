@@ -10,7 +10,7 @@ from pyamm.musician import brain
 
 class MusicianTest(TestCase):
     def test_ideate(self):
-        brain.ideate(4,stout=True)
+        brain.ideate(2,stout=True)
 
 class MidiTest(TestCase):
 
