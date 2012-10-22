@@ -5,12 +5,13 @@ Make sure its from the main module directory!
 SEE: http://docs.python.org/library/unittest.html#test-discovery
 """
 from unittest import TestCase, main
-from pyamm.midi import notes
+from pyamm.theory import notes
 from pyamm.musician import brain
 
 class MusicianTest(TestCase):
     def test_ideate(self):
         brain.ideate(2,stout=True)
+        brain.ideate(2, 'min', 5, True)
 
 class MidiTest(TestCase):
 

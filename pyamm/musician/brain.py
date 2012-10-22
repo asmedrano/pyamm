@@ -1,6 +1,6 @@
 # stuff that happens in the musicians brain
 import random
-from pyamm.musician.theory import *
+from pyamm.theory import roman
 
 def ideate(num_chords, scale='maj', limit=None, stout=False):
     """
@@ -12,9 +12,9 @@ def ideate(num_chords, scale='maj', limit=None, stout=False):
         stout -- print to stout?
     """
     if scale == 'maj':
-        degree = MAJOR_SCALE
+        degree = roman.MAJOR_SCALE
     elif scale == 'min':
-        degree = MINOR_SCALE
+        degree = roman.MINOR_SCALE
     else:
         raise ValueError('%s not supported' % scale)
 
