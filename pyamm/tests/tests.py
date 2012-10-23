@@ -6,12 +6,18 @@ SEE: http://docs.python.org/library/unittest.html#test-discovery
 """
 from unittest import TestCase, main
 from pyamm.theory import notes
+from pyamm.theory import time
 from pyamm.musician import brain
 
 class MusicianTest(TestCase):
     def test_ideate(self):
-        brain.ideate(2,stout=True)
-        brain.ideate(2, 'min', 5, True)
+        brain.ideate(2)
+        brain.ideate(2, 'min', 5)
+
+class TestTime(TestCase):
+    def test_time_sig(self):
+        ts = time.TimeSignature(4,4)
+        print ts
 
 class MidiTest(TestCase):
 
