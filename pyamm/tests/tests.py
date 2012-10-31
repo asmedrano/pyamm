@@ -8,6 +8,7 @@ from unittest import TestCase, main
 from pyamm.theory import notes
 from pyamm.theory import time
 from pyamm.musician import brain
+from pyamm.midiutil.timeline import MidiTimeline
 
 class MusicianTest(TestCase):
     def test_ideate(self):
@@ -20,6 +21,82 @@ class TestTime(TestCase):
         print ts
 
 class MidiTest(TestCase):
+
+    def test_midi_timeline(self):
+        tm = MidiTimeline('SampleFile')
+        #wholenote
+        tm.add_note(4)
+        # halfnotes
+        tm.add_note(2)
+        tm.add_note(2)
+        # quarternotes
+        tm.add_note(1)
+        tm.add_note(1)
+        tm.add_note(1)
+        tm.add_note(1)
+        #eightnotes
+        tm.add_note(.5)
+        tm.add_note(.5)
+        tm.add_note(.5)
+        tm.add_note(.5)
+        tm.add_note(.5)
+        tm.add_note(.5)
+        tm.add_note(.5)
+        tm.add_note(.5)
+
+        # sixteenthnotes
+        tm.add_note(.25)
+        tm.add_note(.25)
+        tm.add_note(.25)
+        tm.add_note(.25)
+        tm.add_note(.25)
+        tm.add_note(.25)
+        tm.add_note(.25)
+        tm.add_note(.25)
+        tm.add_note(.25)
+        tm.add_note(.25)
+        tm.add_note(.25)
+        tm.add_note(.25)
+        tm.add_note(.25)
+        tm.add_note(.25)
+        tm.add_note(.25)
+        tm.add_note(.25)
+
+        # 32nd notes
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+        tm.add_note(.125)
+
+        tm.export_midi_file('testout.mid')
 
     def test_midi_note(self):
         c = notes.C()
