@@ -1,4 +1,10 @@
 #  Anyting related to time in music
+
+TIME_SIGS ={
+    '4/4':4,
+    '3/4':3,
+}
+
 class TimeSignature(object):
     """
     Represents Time signatures
